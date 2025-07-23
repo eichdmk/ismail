@@ -1,0 +1,384 @@
+.product-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-image {
+  position: relative;
+  height: 200px;
+  background: #f8f9fa;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+/* Бейджи */
+.product-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+}
+
+.badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: white;
+  line-height: 1.2;
+}
+
+.badge-new {
+  background: #4CAF50;
+}
+
+.badge-bestseller {
+  background: #FF6B35;
+}
+
+.badge-discount {
+  background: #FF4757;
+  font-weight: 700;
+}
+
+/* Контент карточки */
+.product-content {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-category {
+  font-size: 10px;
+  color: #8B5C2A;
+  background: #F7F3EF;
+  border: 1px solid #8B5C2A;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.product-title {
+  font-size: 1.3rem !important;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: unset;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Новый стиль для выделения названия */
+.highlight-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: 0.05px;
+  text-shadow: none;
+  margin-bottom: 8px;
+  text-align: justify;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  padding: 0 2px;
+  max-width: 100%;
+  margin-left: -2px !important;
+}
+
+.product-title:hover {
+  color: var(--primary-color);
+}
+
+/* Рейтинг */
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+  color: #FFD700;
+}
+
+.rating-value {
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+}
+
+.reviews-count {
+  font-size: 10px;
+  color: #666;
+}
+
+/* Характеристики */
+.product-specs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.spec-item {
+  font-size: 10px;
+  color: #888;
+  font-weight: 400;
+}
+
+
+
+/* Цены */
+.product-pricing {
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.current-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+/* Плашка для цены */
+.price-badge {
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.price-badge:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: scale(1.08) rotate(-2deg);
+  background: var(--accent-color);
+}
+
+.old-price {
+  font-size: 12px;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.discount-info {
+  display: flex;
+  align-items: center;
+}
+
+.discount-text {
+  font-size: 10px;
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+/* Плашка скидки по размеру текста */
+.discount-badge {
+  display: inline-block;
+  background: #FF4757;
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 0;
+  width: auto;
+  text-align: center;
+  margin-left: 0;
+  box-shadow: 0 1px 4px rgba(255,71,87,0.08);
+}
+
+/* Кнопка добавления в корзину */
+.add-to-cart-button {
+  width: 100%;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-top: auto;
+}
+
+.add-to-cart-button:hover {
+  background: var(--accent-color);
+}
+
+.add-to-cart-button:active {
+  transform: translateY(1px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .product-image {
+    height: 180px;
+  }
+
+  .product-content {
+    padding: 10px;
+  }
+
+  .product-title {
+    font-size: 12px;
+    min-height: 1.8rem;
+  }
+
+  .product-specs {
+    gap: 4px;
+  }
+
+  .current-price {
+    font-size: 15px;
+  }
+
+  .add-to-cart-button {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    height: 160px;
+  }
+
+  .product-content {
+    padding: 8px;
+  }
+
+  .product-badges {
+    top: 6px;
+    left: 6px;
+  }
+
+  .badge {
+    padding: 1px 4px;
+    font-size: 9px;
+  }
+
+  .current-price {
+    font-size: 14px;
+  }
+
+  .add-to-cart-button {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* Эффект загрузки изображения */
+.product-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  z-index: 1;
+}
+
+.product-image img {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.product-image img[src] + .product-image::before {
+  display: none;
+} 
