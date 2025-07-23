@@ -1,0 +1,310 @@
+.footer {
+  background: var(--text-dark);
+  color: white;
+  padding: 60px 0 20px;
+  position: relative;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Логотип и описание */
+.footer-logo {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.footer-logo-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  letter-spacing: -1px;
+}
+
+.footer-logo-subtitle {
+  font-size: 14px;
+  color: var(--text-light);
+  font-weight: 400;
+  margin-top: -2px;
+}
+
+.footer-description {
+  color: #B0B0B0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Заголовки секций */
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+/* Контакты */
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  
+}
+
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #B0B0B0;
+  font-size: 14px;
+}
+
+.contact-item svg {
+  color: var(--secondary-color);
+  flex-shrink: 0;
+}
+
+/* Навигация */
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav a {
+  color: #B0B0B0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* Часы работы */
+.footer-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  color: #B0B0B0;
+  font-size: 16px;
+  align-items: center;
+  /* Центрирование */
+}
+
+footer span{
+  color: #B0B0B0;
+}
+
+.hours-item > span:first-child {
+  color: #B0B0B0 !important;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin-right: 8px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Нижняя часть футера */
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-copyright {
+  color: #B0B0B0;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #B0B0B0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* Социальные сети */
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #B0B0B0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+  background: var(--secondary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-link svg {
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* Кнопка прокрутки наверх */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.scroll-top-btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .footer-section.contacts span{
+    
+    font-size: 16px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-section.contacts span{
+    
+    font-size: 16px;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    gap: 25px;
+  }
+
+  .footer-logo-text {
+    font-size: 28px;
+  }
+
+  .footer-title {
+    font-size: 16px;
+  }
+
+  .scroll-top-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+} 
+
+@media (min-width: 1024px) {
+  .footer-section.contacts{
+    width: 140%;
+  }
+  .footer-section.contacts span{
+    
+    font-size: 16px;
+  }
+
+   .days{
+    position: absolute;
+    right: 100px;
+  }
+
+
+}
